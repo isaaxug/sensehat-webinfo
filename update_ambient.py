@@ -5,8 +5,9 @@ import datetime
 import re
 from sense_hat import SenseHat
 
-AMBIENT_CHANNEL_ID = "18768"
-AMBIENT_WRITE_KEY = "98871282c62dd0fe"
+# chenge to your ID and Pass
+AMBIENT_CHANNEL_ID = "YourID"
+AMBIENT_WRITE_KEY = "YourPassword"
 
 CHECK_SPAN = 30
 sense = SenseHat()
