@@ -3,7 +3,6 @@
 from flask import Flask, render_template, jsonify
 from sense_hat import SenseHat
 import os
-import math
 
 HTTP_PORT = int(os.environ.get('HTTP_PORT', '5000'))
 
@@ -32,7 +31,7 @@ def showEnviron():
         result['results']['humidity'] = sense.get_humidity()
         result['results']['tempture'] = sense.get_temperature()
         result['results']['pressure'] = sense.get_pressure()
-        result['results']['compass'] = math.ceil(sense.get_compass())
+        result['results']['compass'] = sense.get_compass()
         gyro = sense.get_gyroscope()
         gyro['pitch'] = round(gyro['pitch'],2)
         gyro['roll'] = round(gyro['roll'],2)
