@@ -33,7 +33,11 @@ def showEnviron():
         result['results']['tempture'] = sense.get_temperature()
         result['results']['pressure'] = sense.get_pressure()
         result['results']['compass'] = math.ceil(sense.get_compass())
-        result['results']['gyro'] = sense.get_gyroscope()
+        gyro = sense.get_gyroscope()
+        gyro['pitch'] = round(gyro['pitch'],2)
+        gyro['roll'] = round(gyro['roll'],2)
+        gyro['yaw'] = round(gyro['yaw'],2)
+        result['results']['gyro'] = gyro
         result['results']['leds'] = led_status
         result['error'] = False
 
